@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function help() {
-        echo "Usage: $0 "
+        echo "Usage: $0"
 	echo "Arg1= First 3 octets of IP"
 	echo "Arg2= Last octect of IP - Scan start IP"
 	echo "Arg3= Last octect of IP - End of scan IP"
@@ -27,7 +27,6 @@ lastOctet=$3
 for i in $(eval echo "{$startOctet..$lastOctet}")
 do
 	current="$ipFirstThreeOctets.$i"
-	#echo "$ipFirstThreeOctets.$i"
 	result=$(nslookup "$ipFirstThreeOctets.$i" 2>/dev/null)
 	if [[ $? == 1 ]]
 	then
